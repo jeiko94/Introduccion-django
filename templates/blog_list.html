@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+blog list, como seria
+<br>
+<br>
+{%for post in posts%}
+<a class="text-green-500" href = {% url "blog:detail" post.id %}>{{post.title}}</a>
+<a class="text-blue-500" href = {% url "blog:update" post.id %}>update</a>
+<a class="text-red-500" href = {% url "blog:delete" post.id %}>delete</a>
+{% endfor %}
+<br>
+<a class="text-purple-500" href={% url "blog:create" %}>create</a>
+{% endblock content %}
